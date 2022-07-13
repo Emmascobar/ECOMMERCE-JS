@@ -174,3 +174,5 @@ formaDePago({ metodo: "Tarjeta de Credito", Banco: "BBVA", financiacion: "Contad
 formaDePago({ metodo: "Tarjeta de Credito", Banco: "ICBC", financiacion: "Cuotas", cantidad: 6 });
 
 
+const CompraActual = carrito.concat(formasDePago);
+console.log(CompraActual);
