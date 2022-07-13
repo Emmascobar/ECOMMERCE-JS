@@ -1,8 +1,40 @@
-/* -------------------------- */
-// CURSO DE JS 2022
-// Alumno: Emmanuel Escobar
-/* -------------------------- */
+/*let edad = prompt("Ingresa tu edad")
 
+let genero = prompt("Cual es tu genero?")
+
+let resultado = (edad + " " + sexo)
+
+alert(resultado)
+
+console.log(resultado)*/
+
+/*const nacimiento = prompt("Ingresa tu año de nacimiento")
+const sexo = prompt("Ingresa tu sexo biologico")
+
+let resultado2 = (nacimiento + " " + sexo)
+
+alert(resultado2)
+
+console.log(resultado2)*/
+
+// let fechaNacimiento = ParseInt(prompt ("Dinos tu nombre"))
+// let edadActual = ParseInt(prompt("Dinos tu apellido"))
+
+// let Resultado = fechaNacimiento - edadActual
+
+// console.log (resultado)
+
+
+// const producto = "Pipa Solar";
+
+// function agregarAlCarrito() {
+//     console.log (producto + " " + "añadida a la cesta.")
+
+// }
+
+// agregarAlCarrito()
+// agregarAlCarrito()
+// agregarAlCarrito()
 
 // ------------- DESAFIO ADICIONAL------------
 
@@ -87,11 +119,11 @@
 //     console.log(sumaCarrito);
 // }
 
-// // let descuento ???? =
-// // function descuento(sumaCarrito) {
-// //     if (sumaCarrito > 1000)
-// //     const descuento = sumaCarrito%5;
-// // }
+// let descuento =
+// function descuento(sumaCarrito) {
+//     if (sumaCarrito > 1000)
+//     const descuento = sumaCarrito%5;
+// }
 
 // let costoEnvio = sumaCarrito % 7.5;
 
@@ -124,53 +156,39 @@
 // agregarAlCarrito ("Notebook DELL 14", 8);
 
 
-// DESAFIO COMPLEMENTARIO: ARRAYS --------!!!!
+---------- Objetos y Funciones constructoras -------------
 
-const productos = [];
-
-function agregarEnTIenda(producto) {
-    productos.push(producto);
-    console.log(productos)
+// FUNCION COSTRUCTORA DE OBJETOS
+function Auto (parametroMarca, parametroModelo, parametroColor) {
+    this.marca = parametroMarca;
+    this.modelo = parametroModelo;
+    this.color = parametroColor; 
 }
 
-agregarEnTIenda({ id: 001, nombre: "Google Lens", precio: 300 });
-agregarEnTIenda({ id: 002, nombre: "Teclado Gamer", precio: 45 });
-agregarEnTIenda({ id: 003, nombre: "Nexus S10", precio: 850 });
+// LLAMADO A CREACION DE NUEVO OBJETO
+const primerAuto = new auto ("Ford" , "2020", "Negro");
 
-function sacarDeTienda(productoId) {
-    const index = productos.indexOf((producto) => producto.id === productoId);
-    productos.splice(index, 1);
-    console.log(productos);
+// OBJETO LITERAL
+const auto = {  
+    marca: "Ford",
+    modelo: 2020,
+    color: "negro"
 }
 
-sacarDeTienda(002)
+// ------------- Ó -------------------
 
+const primerAuto = new auto (auto);
 
-const carrito = [];
-
-function agregarAlCarrito(producto) {
-    carrito.push(producto);
-    console.log(carrito)
+function Auto (ObjetoDelAuto.) {
+    this.marca = ObjetoDelAuto.parametroMarca;
+    this.modelo = ObjetoDelAuto.parametroModelo;
+    this.color = ObjetoDelAuto.parametroColor; 
 }
 
-agregarAlCarrito({ id: 121, nombre: "Parlante JBL ExtremeOh", precio: 500 });
-agregarAlCarrito({ id: 212, nombre: "Mouse Gamer", precio: 40 });
-agregarAlCarrito({ id: 333, nombre: "Echo Dot 3rd", precio: 150 });
-
-
-const formasDePago = [];
-
-// let formaDePago = 01 /* Tarjeta de Credito */
-// if (formaDePago == 01) {
-// }
-
-function formaDePago(paymentMetod) {
-    formasDePago.push(paymentMetod);
-    console.log(formasDePago)
-
+const auto = {  
+    marca: "Ford",
+    modelo: 2020,
+    color: "negro"
 }
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "Santander", financiacion: "Cuotas", cantidad: 3 });
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "BBVA", financiacion: "Contado", cantidad: 1 });
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "ICBC", financiacion: "Cuotas", cantidad: 6 });
 
 

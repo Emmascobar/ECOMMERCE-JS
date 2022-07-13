@@ -1,3 +1,4 @@
 .header-logo img {
   width: 250px;
+  filter: drop-shadow(0px 0px 1px #FFFFFF);
 }/*# sourceMappingURL=styles2.css.map */
