@@ -126,53 +126,137 @@
 
 // DESAFIO COMPLEMENTARIO: ARRAYS --------!!!!
 
-const productos = [];
+// const productos = [];
 
-function agregarEnTIenda(producto) {
-    productos.push(producto);
-    console.log(productos)
-}
-
-agregarEnTIenda({ id: 001, nombre: "Google Lens", precio: 300 });
-agregarEnTIenda({ id: 002, nombre: "Teclado Gamer", precio: 45 });
-agregarEnTIenda({ id: 003, nombre: "Nexus S10", precio: 850 });
-
-function sacarDeTienda(productoId) {
-    const index = productos.indexOf((producto) => producto.id === productoId);
-    productos.splice(index, 1);
-    console.log(productos);
-}
-
-sacarDeTienda(002)
-
-
-const carrito = [];
-
-function agregarAlCarrito(producto) {
-    carrito.push(producto);
-    console.log(carrito)
-}
-
-agregarAlCarrito({ id: 121, nombre: "Parlante JBL ExtremeOh", precio: 500 });
-agregarAlCarrito({ id: 212, nombre: "Mouse Gamer", precio: 40 });
-agregarAlCarrito({ id: 333, nombre: "Echo Dot 3rd", precio: 150 });
-
-
-const formasDePago = [];
-
-// let formaDePago = 01 /* Tarjeta de Credito */
-// if (formaDePago == 01) {
+// function agregarEnTIenda(producto) {
+//     productos.push(producto);
+//     console.log(productos)
 // }
 
-function formaDePago(paymentMetod) {
-    formasDePago.push(paymentMetod);
-    console.log(formasDePago)
+// agregarEnTIenda({ id: 001, nombre: "Google Lens", precio: 300 });
+// agregarEnTIenda({ id: 002, nombre: "Teclado Gamer", precio: 45 });
+// agregarEnTIenda({ id: 003, nombre: "Nexus S10", precio: 850 });
 
+// function sacarDeTienda(productoId) {
+//     const index = productos.indexOf((producto) => producto.id === productoId);
+//     productos.splice(index, 1);
+//     console.log(productos);
+// }
+
+// sacarDeTienda(002)
+
+
+// const carrito = [];
+
+// function agregarAlCarrito(producto) {
+//     carrito.push(producto);
+//     console.log(carrito)
+// }
+
+// agregarAlCarrito({ id: 121, nombre: "Parlante JBL ExtremeOh", precio: 500 });
+// agregarAlCarrito({ id: 212, nombre: "Mouse Gamer", precio: 40 });
+// agregarAlCarrito({ id: 333, nombre: "Echo Dot 3rd", precio: 150 });
+
+
+// const formasDePago = [];
+
+// // let formaDePago = 01 /* Tarjeta de Credito */
+// // if (formaDePago == 01) {
+// // }
+
+// function formaDePago(paymentMetod) {
+//     formasDePago.push(paymentMetod);
+//     console.log(formasDePago)
+
+// }
+// formaDePago({ metodo: "Tarjeta de Credito", Banco: "Santander", financiacion: "Cuotas", cantidad: 3 });
+// formaDePago({ metodo: "Tarjeta de Credito", Banco: "BBVA", financiacion: "Contado", cantidad: 1 });
+// formaDePago({ metodo: "Tarjeta de Credito", Banco: "ICBC", financiacion: "Cuotas", cantidad: 6 });
+
+
+// const CompraActual = carrito.concat(formasDePago);
+// console.log(CompraActual);
+
+
+
+// PRE- ENTREGA PROYECTO FINAL: UNO --------!!!!
+
+
+// ---------------- Objetos ----------------------
+
+let listaDeProductos = [
+    { id: 1, nombre: "Mouse Gamer", precio: 30, stock: 40 },
+    { id: 2, nombre: "Teclado Gamer", precio: 40, stock: 40 },
+    { id: 3, nombre: "Mini Ventilador USB", precio: 25, stock: 100 },
+    { id: 4, nombre: "Funda Luminosa", precio: 10, stock: 100 },
+    { id: 5, nombre: "Exprimidor de tubos", precio: 10, stock: 150 },
+    { id: 6, nombre: "Calentador de tazas", precio: 30, stock: 80 },
+    { id: 7, nombre: "Esponja Magica", precio: 10, stock: 60 },
+    { id: 8, nombre: "Pizarra Infinita", precio: 30, stock: 40 },
+    { id: 9, nombre: "Parlante MM", precio: 90, stock: 25 },
+    { id: 10, nombre: "Lampara Garfield", precio: 50, stock: 30 },
+    { id: 11, nombre: "Alcancia Squirtle", precio: 20, stock: 60 },
+]
+let busqueda2 = prompt("¿Cuanto desea gastar?");
+
+const resultado2 = listaDeProductos.filter((producto) => producto.precio < busqueda2)
+
+console.log(resultado2)
+
+
+
+// ----------------agregar productos al carrito-------------------
+
+let carrito = [];
+
+function agregarAlCarrito(producto) {
+    console.log(producto[0].stock);
+
+    if (producto[0].stock > 0) {
+        carrito.push(producto);
+        console.log(carrito)
+    } else {
+        console.log("No hay stock del producto");
+    }
 }
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "Santander", financiacion: "Cuotas", cantidad: 3 });
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "BBVA", financiacion: "Contado", cantidad: 1 });
-formaDePago({ metodo: "Tarjeta de Credito", Banco: "ICBC", financiacion: "Cuotas", cantidad: 6 });
+
+let busqueda = prompt("¿Que desea comprar?");
+const resultado = listaDeProductos.filter((producto) => producto.nombre == busqueda);
+
+agregarAlCarrito(resultado);
 
 
-const CompraActual = carrito.concat(formasDePago);
-console.log(CompraActual);
+
+// ------------------reduce: suma del carrito----------------------
+
+// const totalCarrito = carrito.reduce((acc, producto) => { return acc + producto.precio} , 0 );
+// console.log(totalCarrito);
+
+// let sumaCarrito = 0;
+// for (let i = 0; i < sumaCarrito.length; i++) {
+//     sumaCarrito = sumaCarrito + carrito[i];
+//     console.log(sumaCarrito);
+// }
+
+function suma(a, b) {
+    return a + b;
+  }
+  
+  const totalCarrito = carrito.reduce(suma);
+  
+  console.log(totalCarrito);
+
+
+// ------------------- map -----------------------
+
+const actualizacionPrecios = listaDeProductos.map((producto) => {
+    return {
+        precio: producto.precio * 1.50
+    }
+})
+console.log(actualizacionPrecios)
+
+// -------------- otros ------------------------
+
+let compraRealizada = console.log("Felicitaciones ha comprado el " + busqueda);
+
