@@ -181,69 +181,118 @@
 /* Es como una cajita, con propiedades por fuera y elementos, de todo tipo ordenados,  por dentro, */
 /* Se declaran con [] */
 
-let frutas = ["banana", "manzana", "mango",];
+// let frutas = ["banana", "manzana", "mango",];
 
-console.log(frutas[1]);
+// console.log(frutas[1]);
 
-/* Arrays Asociativos */
+// /* Arrays Asociativos */
 
-let pc1 = {
-    nombre: "EmmaPC",
-    procesador: "AMD Ryzen 5",
-    ram: "16gb",
-    disco: "500gb",
+// let pc1 = {
+//     nombre: "EmmaPC",
+//     procesador: "AMD Ryzen 5",
+//     ram: "16gb",
+//     disco: "500gb",
+// }
+
+// let pc2 = ["Emma PC", "AMD Ryzen 5", "16gb", "500gb"];
+
+// let nombre = pc1["nombre"];
+// let procesador = pc1["procesador"];
+// let ram = pc1["ram"];
+// let disco = pc1["disco"];
+
+// frase = `el nombre de mi pc es: ${nombre} <br>
+//         El procesador es: ${procesador} <br>
+//         La ram es de: ${ram} <br>
+//         el disco es de: ${disco} <br>`
+
+// document.write(frase),
+
+
+//     // BUCLES E ITERACION ----------->
+
+//     /* If esta condicion se cumple, ejecutamos lo siguiente*/
+//     /* While (bucle) : si se cumple continuamente aun se cumpla la condicion, hasta que se termine el bucle cuando ya no se cumple la condición */
+//     /* If esta condicion se cumple, ejecutamos */
+
+//     let numero = 0;
+
+// if (numero < 10) {
+//     numero++;
+
+//     console.log(numero);
+// }
+
+// while (numero < 6) { /* Se ejecutara siempre que sea menor a 6, sumando en cada vuelta */
+//     numero++;
+
+//     console.log(numero);
+// }
+
+// do { /* ya se ejecuta una vez y seguira solo si se sigue cumpliendo la condición */
+//     console.log(numero);
+//     numero++;
+// }
+// while (numero > 6) {
+//     numero++;
+//     console.log(numero);
+//     if (numero == 5) {
+//         break; /* marca el fin del ciclo */
+//     }
+// }
+
+// // FOR /* igual al while pero determinado */ En el se crean variables / Partes: Declaracion, inicializacion, condicion y actualizacion.
+
+// for (let i = 0; i < 6; i++) { /* Declaramos en 0 la variable, diciendo que mientras sea < 6 prosiga, y se actualice de a uno ++ */
+//     console.log(i)
+
+//     if (i == 12) {
+//         break; /* -continue- para saltear iteracion y pasar a la siguiente */
+//     }
+//     console.log(i);
+
+// }
+
+// // FOR IN ---
+
+// let animales = [gato, perro, vaca, cerdo];
+
+// for (animal in animales) {
+//     console.log(animal);
+// }
+
+// array1 = [maria, esther, carla];
+// array2 = [pedro, matias, juan];
+
+// for (let array in array2) {
+//     if 
+// }
+
+// // ------------- FUNCIONES ------------- 
+
+// /*  Optimiza el codigo, guardando dato dentro de ella.
+//  Primero la definimos, luego la usamos y reusamos */
+
+//  funcion saludar() {
+//     respuesta = prompt("¿Como estas hoy?");
+//     if (respuesta == "bien") {
+//         alert(me alegro!)
+//         return "lo haz hecho bien!"
+//     } else {
+//         alert(que pena!);
+//     }
+//  } 
+
+//  saludar()
+//  saludar() /* Con estas lineas ejecutamos el codigo la cantidad de veces que sean */
+
+  
+// /* Parametros de las funciones (le da su variabilidad) */
+
+
+function sumaTodos(num1, num2) {
+    let suma = num1 + num2;
+    console.log(suma)
 }
 
-let pc2 = ["Emma PC", "AMD Ryzen 5", "16gb", "500gb"];
-
-let nombre = pc1["nombre"];
-let procesador = pc1["procesador"];
-let ram = pc1["ram"];
-let disco = pc1["disco"];
-
-frase = `el nombre de mi pc es: ${nombre} <br>
-        El procesador es: ${procesador} <br>
-        La ram es de: ${ram} <br>
-        el disco es de: ${disco} <br>`
-
-document.write(frase),
-
-
-// BUCLES E ITERACION ----------->
-
-/* If esta condicion se cumple, ejecutamos lo siguiente*/
-/* While (bucle) : si se cumple continuamente aun se cumpla la condicion, hasta que se termine el bucle cuando ya no se cumple la condición */
-/* If esta condicion se cumple, ejecutamos */
-
-let numero = 0;
-
-if (numero < 10) {
-    numero++;
-
-    console.log (numero);
-}
-
-while (numero < 6) { /* Se ejecutara siempre que sea menor a 6, sumando en cada vuelta */
-    numero++;
-
-    console.log (numero);
-}
- 
-do { /* ya se ejecuta una vez y seguira solo si se sigue cumpliendo la condición */
-    console.log(numero);
-    numero++;
-}
-while (numero > 6) {
-    numero++;
-    console.log(numero);
-    if (numero == 5){
-        break; /* marca el fin del ciclo */
-    }
-}
-
-// FOR /* igual al while pero determinado */ En el se crean variables / Partes: Declaracion, inicializacion, condicion y actualizacion.
-
-for (let i = 0; i < 6; i++) { /* Declaramos en 0 la variable, diciendo que mientras sea < 6 prosiga, y se actualice de a uno ++ */
-    console.log(i) 
-}
-
+sumaTodos(11,12)

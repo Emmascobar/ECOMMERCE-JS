@@ -625,6 +625,12 @@ textarea.input {
   border-top: 3px solid #D10024;
 }
 
+.container-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 /*----------------------------*\
 	Main nav
 \*----------------------------*/

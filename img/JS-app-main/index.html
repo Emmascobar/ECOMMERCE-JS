@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comision 37950 Js</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <h1 class="navbar-brand">CoderHouse</h1>
+      </div>
+    </nav>
+
+    <div class="encabezado">
+      <h1 id="titulo">Selecciona tu siguiente curso</h1>
+      <a
+        id="enlace"
+        href="https://www.w3schools.com/js/js_htmldom.asp"
+        target="_blank"
+        >Puedes encontrar más información de DOM en éste enlace</a
+      >
+    </div>
+
+    <div class="container">
+      <div id="lista-cursos">
+        <div class="row">
+          <div class="card" style="width: 18rem">
+            <img
+              src="./assets/desarrollo-web.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Desarrollo Web</h5>
+              <p class="card-text">
+                En este curso aprenderás a crear tu sitio web partiendo del
+                prototipo en papel. Te sumergirás en las mejores prácticas del
+                desarrollo web, trabajando con HTML y CSS.
+              </p>
+              <h6 class="precio">$<span>5000</span></h6>
+            </div>
+            <a href="#" class="btn agregar-carrito" id="1">Comprar</a>
+          </div>
+          <div class="card" style="width: 18rem">
+            <img
+              src="./assets/javascript (1).png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">JavaScript</h5>
+              <p class="card-text">
+                En este curso aprenderás los fundamentos del lenguaje de
+                programación más usado en la actualidad, con el cual es posible
+                crear aplicaciones de todo tipo.
+              </p>
+              <h6 class="precio">$<span>7000</span></h6>
+            </div>
+            <a href="#" class="btn agregar-carrito" id="2">Comprar</a>
+          </div>
+          <div class="card" style="width: 18rem">
+            <img
+              src="./assets/0_oZLL-N4dGNlBe4Oh.png"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">React</h5>
+
+              <p class="card-text">
+                En este curso, que es el tercer nivel de la carrera de
+                programación, aprenderás a programar por componentes, mediante
+                Javascript, JS, ES6, y también conocerás las ventajas de la
+                utilización del flujos de datos
+              </p>
+              <h6 class="precio">$<span>10000</span></h6>
+            </div>
+            <a href="#" class="btn agregar-carrito" id="3">Comprar</a>
+          </div>
+          <div class="card" style="width: 18rem">
+            <img src="./assets/nodejs.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Node</h5>
+
+              <p class="card-text">
+                En este curso aprenderás a desarrollar aplicaciones modernas con
+                Node.js y MongoDB. Programarás en Javascript del lado del
+                servidor aplicando técnicas asincrónicas.
+              </p>
+              <h6 class="precio">$<span>15000</span></h6>
+            </div>
+            <a href="#" class="btn agregar-carrito" id="4">Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="listaVacia"></div>
+    <a href="">
+      <!-- CARRITO DE COMPRAS -->
+      <div class="container">
+        <div class="centrado-cart">
+          <a
+            class="btn-cart"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+          >
+            <img src="./assets/diagram-61_24456.png" alt="" class="img-cart" />
+          </a>
+        </div>
+
+        <div class="collapse" id="collapseExample">
+          <div id="carrito">
+            <table class="table" id="lista-carrito">
+              <thead>
+                <tr>
+                  <th>Curso</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Quitar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                </tr>
+              </tbody>
+            </table>
+            <div class="centrado">
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                id="vaciar-carrito"
+              >
+                Vaciar Carrito
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="vaciar-carrito"
+              >
+                Confirmar Compra
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- FORMULARIO -->
+    <form id="formulario" action="/buscador" method="post">
+      <div class="container">
+        <div class="mb-3">
+          <label>Nombre y Apellido</label>
+          <input type="text" class="form-control" id="nombre" />
+        </div>
+        <div class="mb-3">
+          <label>Teléfono de contacto</label>
+          <input type="text" class="form-control" id="telefono" />
+        </div>
+        <div class="mb-3">
+          <label>Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" />
+        </div>
+        <div class="mb-3">
+          <label>Su mensaje</label>
+          <textarea class="form-control" id="mansaje" rows="3"></textarea>
+        </div>
+        <div class="button-container">
+          <button type="submit" class="btn btn-dark">Enviar formulario</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="./app3.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

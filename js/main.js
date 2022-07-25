@@ -4,6 +4,43 @@
 /* -------------------------- */
 
 
+// GLOBALES --------------->
+
+// Products Slick
+$('.products-slick').each(function () {
+    var $this = $(this),
+        $nav = $this.attr('data-nav');
+
+    $this.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        infinite: true,
+        speed: 300,
+        dots: false,
+        arrows: true,
+        appendArrows: $nav ? $nav : false,
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        },
+        ]
+    });
+});
+
+
+
+
 // ------------- DESAFIO ADICIONAL------------
 
 // let Gastos = [950, 2100, 4800];
@@ -184,79 +221,134 @@
 
 // ---------------- Objetos ----------------------
 
+// let listaDeProductos = [
+//     { id: 1, nombre: "Mouse Gamer", precio: 30, stock: 40 },
+//     { id: 2, nombre: "Teclado Gamer", precio: 40, stock: 40 },
+//     { id: 3, nombre: "Mini Ventilador USB", precio: 25, stock: 100 },
+//     { id: 4, nombre: "Funda Luminosa", precio: 10, stock: 100 },
+//     { id: 5, nombre: "Exprimidor de tubos", precio: 10, stock: 150 },
+//     { id: 6, nombre: "Calentador de tazas", precio: 30, stock: 80 },
+//     { id: 7, nombre: "Esponja Magica", precio: 10, stock: 60 },
+//     { id: 8, nombre: "Pizarra Infinita", precio: 30, stock: 40 },
+//     { id: 9, nombre: "Parlante MM", precio: 90, stock: 25 },
+//     { id: 10, nombre: "Lampara Garfield", precio: 50, stock: 30 },
+//     { id: 11, nombre: "Alcancia Squirtle", precio: 20, stock: 60 },
+// ]
+// let busqueda2 = prompt("¿Cuanto desea gastar?");
+
+// const resultado2 = listaDeProductos.filter((producto) => producto.precio < busqueda2)
+
+// console.log(resultado2)
+
+
+
+// // ----------------agregar productos al carrito-------------------
+
+// let carrito = [];
+
+// function agregarAlCarrito(producto) {
+//     console.log(producto[0].stock);
+
+//     if (producto[0].stock > 0) {
+//         carrito.push(producto);
+//         console.log(carrito)
+//     } else {
+//         console.log("No hay stock del producto");
+//     }
+// }
+
+// let busqueda = prompt("¿Que desea comprar?");
+// const resultado = listaDeProductos.filter((producto) => producto.nombre == busqueda);
+
+// agregarAlCarrito(resultado);
+
+
+
+// // ------------------reduce: suma del carrito----------------------
+
+// // const totalCarrito = carrito.reduce((acc, producto) => { return acc + producto.precio} , 0 );
+// // console.log(totalCarrito);
+
+// // let sumaCarrito = 0;
+// // for (let i = 0; i < sumaCarrito.length; i++) {
+// //     sumaCarrito = sumaCarrito + carrito[i];
+// //     console.log(sumaCarrito);
+// // }
+
+// function suma(a, b) {
+//     return a + b;
+//   }
+
+//   const totalCarrito = carrito.reduce(suma);
+
+//   console.log(totalCarrito);
+
+
+// // ------------------- map -----------------------
+
+// const actualizacionPrecios = listaDeProductos.map((producto) => {
+//     return {
+//         precio: producto.precio * 1.50
+//     }
+// })
+// console.log(actualizacionPrecios)
+
+// // -------------- otros ------------------------
+
+// let compraRealizada = console.log("Felicitaciones, ha comprado el " + busqueda);
+
+
+// DESAFIO COMPLEMENTARIO. INTERACTUAR CON EL HTML --------!!!!
+
+elegirNumero = prompt("elija un numero del 1 al 4"); 
+
+const frases = [
+    { texto: "Bienvenido a Inspecto Gadget" },
+    { texto: "Llego la hora de disfrutar" },
+    { texto: "Gracias por regresar" },
+    { texto: "Hola! no te olvides de pasar por el SALE!" },
+]
+
+const aleatorio = frases[Math.floor(Math.random() * frases.length + elegirNumero)];
+console.log(aleatorio);
+
 let listaDeProductos = [
     { id: 1, nombre: "Mouse Gamer", precio: 30, stock: 40 },
     { id: 2, nombre: "Teclado Gamer", precio: 40, stock: 40 },
     { id: 3, nombre: "Mini Ventilador USB", precio: 25, stock: 100 },
-    { id: 4, nombre: "Funda Luminosa", precio: 10, stock: 100 },
-    { id: 5, nombre: "Exprimidor de tubos", precio: 10, stock: 150 },
-    { id: 6, nombre: "Calentador de tazas", precio: 30, stock: 80 },
-    { id: 7, nombre: "Esponja Magica", precio: 10, stock: 60 },
-    { id: 8, nombre: "Pizarra Infinita", precio: 30, stock: 40 },
-    { id: 9, nombre: "Parlante MM", precio: 90, stock: 25 },
-    { id: 10, nombre: "Lampara Garfield", precio: 50, stock: 30 },
-    { id: 11, nombre: "Alcancia Squirtle", precio: 20, stock: 60 },
 ]
-let busqueda2 = prompt("¿Cuanto desea gastar?");
-
-const resultado2 = listaDeProductos.filter((producto) => producto.precio < busqueda2)
-
-console.log(resultado2)
 
 
+let header = document.querySelector("#header");
+console.log(header);
 
-// ----------------agregar productos al carrito-------------------
+let searchBar = document.querySelector(".header-search")
+console.log(searchBar);
 
-let carrito = [];
+const traduccion = document.querySelector(".gold").textContent= "COLECCION DE ORO";
 
-function agregarAlCarrito(producto) {
-    console.log(producto[0].stock);
+let agregar = document.createElement("p");
+agregar.innerHTML = "<p><b>Nuevas ofertas!!!</b></p>";
 
-    if (producto[0].stock > 0) {
-        carrito.push(producto);
-        console.log(carrito)
-    } else {
-        console.log("No hay stock del producto");
-    }
+const textOfertas = document.querySelector(".textbody");
+
+textOfertas.insertBefore(agregar, textOfertas[1]);
+
+let eliminar = document.querySelector(".bronce");
+eliminar.remove();
+
+let espacioVacio = document.querySelector(".agregado");
+
+for (let producto of listaDeProductos) {
+    let lista = document.createElement("li");
+    lista.innerHTML = producto;
+    espacioVacio.appendChild(lista);
 }
 
-let busqueda = prompt("¿Que desea comprar?");
-const resultado = listaDeProductos.filter((producto) => producto.nombre == busqueda);
+for (let producto of listaDeProductos) {
+    let resumen = document.createElement("div");
+    resumen.innerHTML = `<h3>${producto.nombre}<h3>
+    <p>${producto.precio}</p>`;
 
-agregarAlCarrito(resultado);
-
-
-
-// ------------------reduce: suma del carrito----------------------
-
-// const totalCarrito = carrito.reduce((acc, producto) => { return acc + producto.precio} , 0 );
-// console.log(totalCarrito);
-
-// let sumaCarrito = 0;
-// for (let i = 0; i < sumaCarrito.length; i++) {
-//     sumaCarrito = sumaCarrito + carrito[i];
-//     console.log(sumaCarrito);
-// }
-
-function suma(a, b) {
-    return a + b;
-  }
-  
-  const totalCarrito = carrito.reduce(suma);
-  
-  console.log(totalCarrito);
-
-
-// ------------------- map -----------------------
-
-const actualizacionPrecios = listaDeProductos.map((producto) => {
-    return {
-        precio: producto.precio * 1.50
-    }
-})
-console.log(actualizacionPrecios)
-
-// -------------- otros ------------------------
-
-let compraRealizada = console.log("Felicitaciones ha comprado el " + busqueda);
-
+    espacioVacio.appendChild(resumen);
+}
