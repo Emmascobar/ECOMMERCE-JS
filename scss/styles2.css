@@ -1,4 +1,10 @@
 .header-logo img {
   width: 250px;
   filter: drop-shadow(0px 0px 1px #FFFFFF);
+}
+
+.shop-img {
+  width: 50%;
+  position: relative;
+  left: 150px;
 }/*# sourceMappingURL=styles2.css.map */

@@ -1,6 +1,5 @@
 /*
-Template Name: Electro - HTML Ecommerce Template
-Author: yaminncco
+GLOBALES::
 
 Colors:
 	Body 		: #333
@@ -59,7 +58,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   color: #333;
-}
+} 
 
 h1, h2, h3, h4, h5, h6 {
   color: #2B2D42;
@@ -293,13 +292,12 @@ textarea.input {
 
 .section {
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .section-title {
   position: relative;
   margin-bottom: 30px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .section-title .title {
@@ -721,21 +719,8 @@ textarea.input {
 .shop {
   position: relative;
   overflow: hidden;
-  margin: 15px 0px;
-}
-
-.shop:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0px;
-  width: 60%;
-  background: #D10024;
-  opacity: 0.9;
-  -webkit-transform: skewX(-45deg);
-  -ms-transform: skewX(-45deg);
-  transform: skewX(-45deg);
+  margin: 30px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .shop:after {
@@ -743,13 +728,13 @@ textarea.input {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 1px;
+  left: 0.3px;
   width: 100%;
-  background: #D10024;
-  opacity: 0.9;
-  -webkit-transform: skewX(-45deg) translateX(-100%);
+  background: #2B2D42;
+  opacity: 0.5;
+  -webkit-transform: skewX(-50deg) translateX(-40%);
   -ms-transform: skewX(-45deg) translateX(-100%);
-  transform: skewX(-45deg) translateX(-100%);
+  transform: skewX(-20deg) translateX(-100%); 
 }
 
 .shop .shop-img {
@@ -759,7 +744,7 @@ textarea.input {
 }
 
 .shop .shop-img>img {
-  width: 100%;
+  width: 120%;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -779,11 +764,11 @@ textarea.input {
 }
 
 .shop .shop-body h3 {
-  color: #FFF;
+  color: #1E1F29;
 }
 
 .shop .shop-body .cta-btn {
-  color: #FFF;
+  color: #1E1F29;
   text-transform: uppercase;
 }
 
@@ -1926,6 +1911,7 @@ textarea.input {
   border-top: 2px solid #E4E7ED;
   border-bottom: 3px solid #D10024;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 .newsletter {
@@ -2010,10 +1996,12 @@ textarea.input {
 #footer {
   background: #15161D;
   color: #B9BABC;
+  overflow-y: hidden;
 }
 
 #bottom-footer {
   background: #1E1F29;
+  padding-bottom: 0px;
 }
 
 .footer {
@@ -2048,6 +2036,7 @@ textarea.input {
 
 .copyright {
   margin-top: 30px;
+  margin-bottom: 30px;
   display: block;
   font-size: 12px;
 }

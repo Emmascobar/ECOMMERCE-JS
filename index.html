@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Custom stlylesheet -->
 	<link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	<link rel="stylesheet" href="/scss/styles2.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
@@ -34,7 +35,6 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> Vera 1177 - CABA</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 					<li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
 				</ul>
 			</div>
@@ -182,17 +182,36 @@
 	</nav>
 	<!-- /NAVIGATION -->
 
+
+
 	<!-- SECTION -->
-	<div class="section">
+	<div class="SAMSUNG S1">
+
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
 			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<br>
+						<h3 class="title">Carrito actual</h3>
+						<div id="carrito">
+						</div>
+						<div id="total">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="section-title">
+						<br>
+						<h3 class="title">INSPECTOR DE COLECCIONES</h3>
+					</div>
+				</div>
 				<!-- shop -->
 				<div class="col-md-4 col-xs-6">
 					<div class="shop">
 						<div class="shop-img">
-							<img src="./img/shop01.png" alt="">
+							<img src="./img/GOLD.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<h3 class="gold">GOLD<br>Collection</h3>
@@ -207,7 +226,7 @@
 				<div class="col-md-4 col-xs-6">
 					<div class="shop">
 						<div class="shop-img">
-							<img src="./img/shop03.png" alt="">
+							<img src="./img/SILVER.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<div class="textbody">
@@ -224,7 +243,7 @@
 				<div class="col-md-4 col-xs-6">
 					<div class="shop">
 						<div class="shop-img">
-							<img src="./img/shop02.png" alt="">
+							<img src="./img/BRONCE.jpg" alt="">
 						</div>
 						<div class="shop-body">
 							<h3 class="bronce">BRONCE<br>Collection</h3>
@@ -255,26 +274,19 @@
 				<!-- section title -->
 				<div class="col-md-12">
 					<div class="section-title">
-						<h3 class="title">New Products</h3>
-						<div class="section-nav">
-							<ul class="section-tab-nav tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-								<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-								<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-								<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
-							</ul>
-						</div>
+						<br>
+						<h3 class="title">Nuevos Productos</h3>
 					</div>
 				</div>
 				<!-- /section title -->
 
 				<!-- Products tab & slick -->
 				<div class="col-md-12">
-					<div class="row">
-						<div class="products-tabs">
+					<div class="row" id="list">
+						<div class="products-tabs" >
 							<!-- tab -->
 							<div id="tab1" class="tab-pane active">
-								<div class="products-slick" data-nav="#slick-nav-1">
+								<div class="products-slick" data-nav="#slick-nav-1" >
 									<!-- product -->
 									<div class="product">
 										<div class="product-img">
@@ -285,10 +297,9 @@
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Notebooks</p>
+											<h3 class="product-name"><a href="#">APPLE MACBOOK PRO 14</a></h3>
+											<h4 class="product-price">$1350.00 <del class="product-old-price">$1500.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -298,16 +309,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn" onclick="agregar()"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -321,10 +330,10 @@
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Audio</p>
+											<h3 class="product-name"><a href="#">AURICULARES MARSHALL X3</a></h3>
+											<h4 class="product-price">$120.00 <del
+													class="product-old-price">$140.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -334,16 +343,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -357,24 +364,22 @@
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Notebooks</p>
+											<h3 class="product-name"><a href="#">APPLE MACBOOK 2021 15</a></h3>
+											<h4 class="product-price">$1200.00 <del
+													class="product-old-price">$1250.00</del></h4>
 											<div class="product-rating">
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -385,10 +390,10 @@
 											<img src="./img/product04.png" alt="">
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Tablets</p>
+											<h3 class="product-name"><a href="#">TABLET SONY XPERIA 10</a></h3>
+											<h4 class="product-price">$180.00 <del
+													class="product-old-price">$200.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -398,16 +403,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -418,10 +421,10 @@
 											<img src="./img/product05.png" alt="">
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Audio</p>
+											<h3 class="product-name"><a href="#">AURICULARES SONY Z4</a></h3>
+											<h4 class="product-price">$230.00 <del
+													class="product-old-price">$250.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -431,16 +434,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -471,13 +472,13 @@
 							<li>
 								<div>
 									<h3>02</h3>
-									<span>Days</span>
+									<span>Dias</span>
 								</div>
 							</li>
 							<li>
 								<div>
 									<h3>10</h3>
-									<span>Hours</span>
+									<span>Horas</span>
 								</div>
 							</li>
 							<li>
@@ -489,13 +490,13 @@
 							<li>
 								<div>
 									<h3>60</h3>
-									<span>Secs</span>
+									<span>Segs</span>
 								</div>
 							</li>
 						</ul>
-						<h2 class="text-uppercase">hot deal this week</h2>
-						<p>New Collection Up to 50% OFF</p>
-						<a class="primary-btn cta-btn" href="#">Shop now</a>
+						<h2 class="text-uppercase">Promociones del Mes</h2>
+						<p>Descuentos de hasta el 30%</p>
+						<a class="primary-btn cta-btn" href="#">¡COMPRAR AHORA!</a>
 					</div>
 				</div>
 			</div>
@@ -515,13 +516,13 @@
 				<!-- section title -->
 				<div class="col-md-12">
 					<div class="section-title">
-						<h3 class="title">Top selling</h3>
+						<h3 class="title">Más vendidos</h3>
 						<div class="section-nav">
 							<ul class="section-tab-nav tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab2">Todos</a></li>
 								<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-								<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-								<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+								<li><a data-toggle="tab" href="#tab2">Camaras</a></li>
+								<li><a data-toggle="tab" href="#tab2">Accessorios</a></li>
 							</ul>
 						</div>
 					</div>
@@ -545,10 +546,10 @@
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Notebooks</p>
+											<h3 class="product-name"><a href="#">MSI GAMER 300 i7</a></h3>
+											<h4 class="product-price">$1250.00 <del
+													class="product-old-price">$1400.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -558,16 +559,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp"> </span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -575,15 +574,15 @@
 									<!-- product -->
 									<div class="product">
 										<div class="product-img">
-											<img src="./img/product07.png" alt="">
+											<img src="./img/CELSAMSUNG.webp" alt="">
 											<div class="product-label">
 												<span class="new">NEW</span>
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
+											<p class="product-category">Smartphones</p>
+											<h3 class="product-name"><a href="#">Samsung S21</a></h3>
+											<h4 class="product-price">$780.00 <del
 													class="product-old-price">$990.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
@@ -594,16 +593,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -617,24 +614,22 @@
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
+											<p class="product-category">Notebooks</p>
+											<h3 class="product-name"><a href="#">ASUS RAW 2022 I5</a></h3>
 											<h4 class="product-price">$980.00 <del
 													class="product-old-price">$990.00</del></h4>
 											<div class="product-rating">
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -642,13 +637,13 @@
 									<!-- product -->
 									<div class="product">
 										<div class="product-img">
-											<img src="./img/product09.png" alt="">
+											<img src="./img/CAMARASONY.webp" alt="">
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Camaras</p>
+											<h3 class="product-name"><a href="#">Sony DCS - W800</a></h3>
+											<h4 class="product-price">$350.00 <del
+													class="product-old-price">$400.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -658,16 +653,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -678,10 +671,10 @@
 											<img src="./img/product01.png" alt="">
 										</div>
 										<div class="product-body">
-											<p class="product-category">Category</p>
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price">$980.00 <del
-													class="product-old-price">$990.00</del></h4>
+											<p class="product-category">Notebooks</p>
+											<h3 class="product-name"><a href="#">APPLE MACBOOK 14 2021</a></h3>
+											<h4 class="product-price">$1200.00 <del
+													class="product-old-price">$1300.00</del></h4>
 											<div class="product-rating">
 												<i class="fa fa-star"></i>
 												<i class="fa fa-star"></i>
@@ -691,16 +684,14 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-														class="tooltipp">add to wishlist</span></button>
-												<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-														class="tooltipp">add to compare</span></button>
+														class="tooltipp">Agregar a Favs</span></button>
 												<button class="quick-view"><i class="fa fa-eye"></i><span
-														class="tooltipp">quick view</span></button>
+														class="tooltipp">Vista Rapida</span></button>
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
-												cart</button>
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>agregar
+												al carrito</button>
 										</div>
 									</div>
 									<!-- /product -->
@@ -727,7 +718,7 @@
 			<div class="row">
 				<div class="col-md-4 col-xs-6">
 					<div class="section-title">
-						<h4 class="title">Top selling</h4>
+						<h4 class="title">Top ventas</h4>
 						<div class="section-nav">
 							<div id="slick-nav-3" class="products-slick-nav"></div>
 						</div>
@@ -738,11 +729,11 @@
 							<!-- product widget -->
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product07.png" alt="">
+									<img src="./img/CELSAMSUNG.webp" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
+									<p class="product-category">Smartphones</p>
+									<h3 class="product-name"><a href="#">samsung s21</a></h3>
 									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 								</div>
 							</div>
@@ -754,8 +745,8 @@
 									<img src="./img/product08.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">ASUS RAW 2022 I5</a></h3>
 									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 								</div>
 							</div>
@@ -764,12 +755,12 @@
 							<!-- product widget -->
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product09.png" alt="">
+									<img src="./img/CAMARASONY.webp" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Camaras</p>
+									<h3 class="product-name"><a href="#">Sony DCS - W800</a></h3>
+									<h4 class="product-price">$350.00 <del class="product-old-price">$400.00</del></h4>
 								</div>
 							</div>
 							<!-- product widget -->
@@ -782,9 +773,10 @@
 									<img src="./img/product01.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">APPLE MACBOOK PRO 14</a></h3>
+									<h4 class="product-price">$1200.00 <del class="product-old-price">$1250.00</del>
+									</h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -795,9 +787,9 @@
 									<img src="./img/product02.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Audio</p>
+									<h3 class="product-name"><a href="#">AURICULARES MARSHALL X3</a></h3>
+									<h4 class="product-price">$120.00 <del class="product-old-price">$140.00</del></h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -808,9 +800,10 @@
 									<img src="./img/product03.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">APPLE MACBOOK 2021 15</a></h3>
+									<h4 class="product-price">$1350.00 <del class="product-old-price">$1500.00</del>
+									</h4>
 								</div>
 							</div>
 							<!-- product widget -->
@@ -820,7 +813,7 @@
 
 				<div class="col-md-4 col-xs-6">
 					<div class="section-title">
-						<h4 class="title">Top selling</h4>
+						<h4 class="title">Top ventas</h4>
 						<div class="section-nav">
 							<div id="slick-nav-4" class="products-slick-nav"></div>
 						</div>
@@ -834,9 +827,9 @@
 									<img src="./img/product04.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Tablets</p>
+									<h3 class="product-name"><a href="#">TABLET SONY XPERIA 10</a></h3>
+									<h4 class="product-price">$180.00 <del class="product-old-price">$200.00</del></h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -847,9 +840,9 @@
 									<img src="./img/product05.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Audio</p>
+									<h3 class="product-name"><a href="#">AURICULARES SONY Z4</a></h3>
+									<h4 class="product-price">$230.00 <del class="product-old-price">$250.00</del></h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -860,9 +853,10 @@
 									<img src="./img/product06.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">MSI GAMER 300 i7</a></h3>
+									<h4 class="product-price">$1250.00 <del class="product-old-price">$1400.00</del>
+									</h4>
 								</div>
 							</div>
 							<!-- product widget -->
@@ -872,11 +866,11 @@
 							<!-- product widget -->
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product07.png" alt="">
+									<img src="./img/CELSAMSUNG.webp" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
+									<p class="product-category">Smartphones</p>
+									<h3 class="product-name"><a href="#">samsung s21</a></h3>
 									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 								</div>
 							</div>
@@ -888,8 +882,8 @@
 									<img src="./img/product08.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">ASUS RAW 2022 I5</a></h3>
 									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 								</div>
 							</div>
@@ -898,12 +892,12 @@
 							<!-- product widget -->
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="./img/product09.png" alt="">
+									<img src="./img/CAMARASONY.webp" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Camaras</p>
+									<h3 class="product-name"><a href="#">Sony DCS - W800</a></h3>
+									<h4 class="product-price">$350.00 <del class="product-old-price">$400.00</del></h4>
 								</div>
 							</div>
 							<!-- product widget -->
@@ -915,7 +909,7 @@
 
 				<div class="col-md-4 col-xs-6">
 					<div class="section-title">
-						<h4 class="title">Top selling</h4>
+						<h4 class="title">Top ventas</h4>
 						<div class="section-nav">
 							<div id="slick-nav-5" class="products-slick-nav"></div>
 						</div>
@@ -929,9 +923,10 @@
 									<img src="./img/product01.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">APPLE MACBOOK PRO 14</a></h3>
+									<h4 class="product-price">$1200.00 <del class="product-old-price">$1300.00</del>
+									</h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -942,9 +937,9 @@
 									<img src="./img/product02.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Audio</p>
+									<h3 class="product-name"><a href="#">AURICULARES MARSHALL X3</a></h3>
+									<h4 class="product-price">$120.00 <del class="product-old-price">$140.00</del></h4>
 								</div>
 							</div>
 							<!-- /product widget -->
@@ -955,158 +950,93 @@
 									<img src="./img/product03.png" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+									<p class="product-category">Notebooks</p>
+									<h3 class="product-name"><a href="#">APPLE MACBOOK 2021 15</a></h3>
+									<h4 class="product-price">$1350.00 <del class="product-old-price">$1500.00</del>
+									</h4>
 								</div>
+								<!-- product widget -->
 							</div>
-							<!-- product widget -->
-						</div>
 
-						<div>
-							<!-- product widget -->
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product04.png" alt="">
+							<div>
+								<!-- product widget -->
+								<div class="product-widget">
+									<div class="product-img">
+										<img src="./img/product04.png" alt="">
+									</div>
+									<div class="product-body">
+										<p class="product-category">Tablets</p>
+										<h3 class="product-name"><a href="#">TABLET SONY XPERIA 10</a></h3>
+										<h4 class="product-price">$180.00 <del class="product-old-price">$200.00</del>
+										</h4>
+									</div>
 								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-							<!-- /product widget -->
+								<!-- /product widget -->
 
-							<!-- product widget -->
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product05.png" alt="">
+								<!-- product widget -->
+								<div class="product-widget">
+									<div class="product-img">
+										<img src="./img/product05.png" alt="">
+									</div>
+									<div class="product-body">
+										<p class="product-category">Audio</p>
+										<h3 class="product-name"><a href="#">AURICULARES SONY Z4</a></h3>
+										<h4 class="product-price">$230.00 <del class="product-old-price">$250.00</del>
+										</h4>
+									</div>
 								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-							<!-- /product widget -->
+								<!-- /product widget -->
 
-							<!-- product widget -->
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product06.png" alt="">
+								<!-- product widget -->
+								<div class="product-widget">
+									<div class="product-img">
+										<img src="./img/product06.png" alt="">
+									</div>
+									<div class="product-body">
+										<p class="product-category">Notebooks</p>
+										<h3 class="product-name"><a href="#">MSI GAMER 300 i7</a></h3>
+										<h4 class="product-price">$1250.00 <del class="product-old-price">$1400.00</del>
+										</h4>
+									</div>
 								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
+								<!-- product widget -->
 							</div>
-							<!-- product widget -->
 						</div>
 					</div>
+
 				</div>
-
+				<!-- /row -->
 			</div>
-			<!-- /row -->
+			<!-- /container -->
 		</div>
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
+		<!-- /SECTION -->
 
-	<!-- NEWSLETTER -->
-	<div id="newsletter" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="newsletter">
-						<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-						<form>
-							<input class="input" type="email" placeholder="Enter Your Email">
-							<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-						</form>
-						<ul class="newsletter-follow">
-							<li>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /NEWSLETTER -->
-
-	<!-- FOOTER -->
-	<footer id="footer">
-		<!-- top footer -->
-		<div class="section">
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">About Us</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut.</p>
-							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Categories</h3>
-							<ul class="footer-links">
-								<li><a href="#">Hot deals</a></li>
-								<li><a href="#">Laptops</a></li>
-								<li><a href="#">Smartphones</a></li>
-								<li><a href="#">Cameras</a></li>
-								<li><a href="#">Accessories</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="clearfix visible-xs"></div>
-
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Information</h3>
-							<ul class="footer-links">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Orders and Returns</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-xs-6">
-						<div class="footer">
-							<h3 class="footer-title">Service</h3>
-							<ul class="footer-links">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">View Cart</a></li>
-								<li><a href="#">Wishlist</a></li>
-								<li><a href="#">Track My Order</a></li>
-								<li><a href="#">Help</a></li>
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p> Suscribite al <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Ingresa tu Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Suscribirme</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -1115,51 +1045,120 @@
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /top footer -->
+		<!-- /NEWSLETTER -->
 
-		<!-- bottom footer -->
-		<div id="bottom-footer" class="section">
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<ul class="footer-payments">
-							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-						</ul>
-						<span class="copyright">
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-							template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-								href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</span>
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Sobre Nosotros</h3>
+								<p> <b>INSPECTOR GADGET</b> es una tienda virtual dedicada a la venta de accesorios de
+									tecnología que cuenta con una gran variedad de productos que van desde notebooks
+									hasta drones. Nuestro centro de atención se ubica en el centro de la Ciudad de
+									Buenos Aires, encontrandonos allí siempre a su servicio.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>Vera 1177 - CP 1111</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+54 11 2244668</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>Inspector.gadget@gadget.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categorias</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mas vendidos</a></li>
+									<li><a href="#">Notebooks</a></li>
+									<li><a href="#">Smartphones</a></li>
+									<li><a href="#">Camaras</a></li>
+									<li><a href="#">Accessorios</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Información</h3>
+								<ul class="footer-links">
+									<li><a href="#">Sobre Nosotros</a></li>
+									<li><a href="#">Contactanos</a></li>
+									<li><a href="#">Politicas de privacidad</a></li>
+									<li><a href="#">Compras y devoluciones</a></li>
+									<li><a href="#">Terminos y condiciones</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Servicios</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mi cuenta</a></li>
+									<li><a href="#">Ir al carrito</a></li>
+									<li><a href="#">Lista de deseos</a></li>
+									<li><a href="#">Seguimiento de pedidos</a></li>
+									<li><a href="#">Centro de atención</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
+					<!-- /row -->
 				</div>
-				<!-- /row -->
+				<!-- /container -->
 			</div>
-			<!-- /container -->
-		</div>
-		<!-- /bottom footer -->
-	</footer>
-	<!-- /FOOTER -->
+			<!-- /top footer -->
 
-	<!-- jQuery Plugins -->
-	<script src="js/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-	<script src="js/slick.min.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.zoom.min.js"></script>
-	<!-- <script src="js/master.js"></script> -->
-	<script src="js/mai	n.js"></script>
-	<!-- <script src="js/master.js"></script> -->
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+							<span class="copyright">
+								<script>document.write(new Date().getFullYear());</script> <b>| INSPECTOR GADGET | </b>
+								All rights reserved to authors.
+							</span>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+		<!-- toastify-js -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+		<!-- SweetAlert -->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
